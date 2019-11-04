@@ -58,7 +58,7 @@ def keyPressed():
         xretta1=xretta1-25
     if keyCode == RIGHT:
         xretta1=xretta1+25
-    if keyCode == 65:
+    if keyCode == 	122:
         xretta2=xretta2-25
-    if keyCode == 83:
+    if keyCode == 	120:
         xretta2=xretta2+25

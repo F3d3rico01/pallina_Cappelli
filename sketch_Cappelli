@@ -1,0 +1,64 @@
+x=80
+y=80
+xretta1=0
+xretta2=0
+altezzaretta2=0
+altezzaretta1=375
+versox=1
+versoy=1
+raggio=50
+punt1=0
+punt2=0
+def setup ():
+     size(600,400)
+     
+def draw():
+    global versox,versoy,xpallina,ypallina,raggio,x,y,xretta1,xretta2,altezzaretta1,punt1,punt2
+    background(0, 0, 0)
+    ellipse (x,y,30,30)
+    x=x+(3*versox)
+    y=y+(3*versoy)
+    if y+25>height and x>xretta1 and x<xretta1+80:
+        versoy*=-1
+    if x+25>height-25 and  x>xretta2 and x<xretta2+80:
+        versoy*=-1
+    if x>width:
+        versox*=-1
+    if y>height:
+        versoy*=-1
+    if x<0:
+        versox*=-1
+        punt2=punt2+10
+    if y<0:
+        versoy*=-1
+        punt1=punt1+10
+    if xretta2>=width-50:
+        xretta2=xretta2-50
+    if xretta1>=width-50:
+        xretta1=xretta1-50
+    if xretta1<0:
+        xretta1*=-1
+    if xretta2<0:
+        xretta2*=-1
+
+    fill (255 )
+    textSize ( 30 )
+    text ( punt2, 10,30 )
+    fill (255 )
+    textSize ( 30 )
+    text ( punt1, 10,400 )
+  
+    
+    rect(xretta1,altezzaretta1,80,25)
+    rect(xretta2,altezzaretta2,80,25)
+
+def keyPressed():
+    global xretta1, versx,xretta2, test1, test2
+    if keyCode == LEFT:
+        xretta1=xretta1-25
+    if keyCode == RIGHT:
+        xretta1=xretta1+25
+    if keyCode == 65:
+        xretta2=xretta2-25
+    if keyCode == 83:
+        xretta2=xretta2+25
